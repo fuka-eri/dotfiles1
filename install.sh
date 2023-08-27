@@ -67,16 +67,6 @@ echo "Installing btop..."
 brew install btop
 cp -ri ./btop ~/.config/
 
-#cava
-echo "Installing cava..."
-brew install --cask background-music
-brew install cava
-cp -ri ./cava ~/.config/
-
-echo "Installing chrome..."
-brew install --cask google-chrome
-echo "Please manually configure chrome afterwards"
-
 # lazygit
 echo "Installing lazygit..."
 brew install lazygit
@@ -93,23 +83,10 @@ brew install ripgrep
 brew install neovim
 cp -ri ./nvim ~/.config/
 
-# qutebrowser
-echo "Installing qutebrowser..."
-brew install --cask qutebrowser
-cp -ri ./qutebrowser ~/.qutebrowser
-
 # tmux
 echo "Installing tmux..."
 brew install tmux
 cp -ri ./tmux/.tmux.conf ~/
-
-# spotify
-echo "Installing spotify..."
-brew install --cask spotify
-brew install khanhas/tap/spicetify-cli
-brew install spotify-tui
-cp -ri ./spotify-tui ~/.config/
-cp -ri ./spicetify ~/.config/
 
 # yabai & skhd
 echo "Installing yabai & skhd..."
@@ -151,8 +128,3 @@ pip install neovim
 pip install pyvim
 pip install Ranger-fm
 
-csrutil status
-echo "Do not forget to disable SIP..."
-echo "Modifier key capslock -> option"
-echo "Add sudoer manually:\n '$(whoami) ALL = (root) NOPASSWD: sha256:$(shasum -a 256 $(which yabai) | awk "{print \$1;}") $(which yabai) --load-sa' to '/private/etc/sudoers.d/yabai'"
-echo "Installation complete...\nRun nvim and Restart..."
